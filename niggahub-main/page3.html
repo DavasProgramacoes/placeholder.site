@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page1</title>
+    <link rel="stylesheet" href="./css/page3.css">
+</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+<body>
+    <div class="header" id="header"> 
+        <button onclick="toggleSidebar()" class="btn_icon_header">
+            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+              </svg>
+        </button>
+        <div class="logo_header">
+            <img src="./placeholders/placeholder.jpg" class="logo_header" alt="logo_header">
+        </div>
+        <div class="navigation_header" id="navigation_header">
+            <button onclick="toggleSidebar()" class="btn_icon_header">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                  </svg>
+            </button>
+            <a href="page3.html"><img src="./placeholders/placeholder.jpg" class="icone" alt="Favoritos"></a>
+            <a href="page2.html"><img src="./placeholders/placeholder.jpg" class="icone" alt="Compras"></a>
+            <a href="page1.html"><img src="./placeholders/placeholder.jpg" class="icone" alt="Usuário"></a>
+            <a href="index.html"><img src="img/Menu.svg" class="Menu" alt="Menu"></a>
+        </div>
+    </div>
+    <div tabindex="0" onclick="closeSidebar()" class="content" id="content">
+        <h1>Page 3</h1>
+    </div>
+</body>
+
+            <!--Rodapé do Site-->
+
+<footer class="rodape">
+    <img src="./placeholders/placeholder.jpg" alt="Alura+" class="rodape__logo">
+         <ul class="rodape__lista">
+            <li class="lista__link">
+                <a href="#">Idioma</a>
+            </li>
+            <li class="lista__link">
+                <a href="#">Dispositivos compatíveis</a>
+            </li>
+            <li class="lista__link">
+                <a href="#">Contrato de assinatura</a>
+            </li>
+                <li class="lista__link">
+                <a href="#">Politica de privacidade</a>
+            </li>
+                <li class="lista__link">
+                <a href="#">Proteção de dados no Brasil</a>
+            </li>
+                <li class="lista__link">
+                <a href="#">Anuncios personalizados</a>
+            </li>
+                <li class="lista__link">
+                <a href="#">Ajuda</a>
+            </li>
+        </ul>
+    <p class="rodape__texto">® 2024 site. Todos os direitos reservados.</p>
+    <p class="rodape__texto">Endereço: Rua Placeholder, 404 - Liberdade, São
+                    Paulo - SP, 69696-969, Brasil e CNPxota 69.696.96/9696-96</p>
+    </footer>
+    <script>
+        var header= document.getElementById('header');
+        var navigation_header= document.getElementById('navigation_header');
+        var content= document.getElementById('content');
+        var showSidebar= false;
+    
+        function toggleSidebar()
+        {
+            showSidebar = !showSidebar;
+            if(showSidebar)
+            {
+                navigation_header.style.marginLeft = '-10vw';
+                navigation_header.style.animation = 'showSidebar';
+                content.style.filter = 'blur(2px)';
+            }
+            else
+            {
+                navigation_header.style.marginLeft = '-100vw';
+                navigation_header.style.animation = ' ';
+                content.style.filter = '';
+            }
+        }
+        function closeSidebar()
+        {
+            if(showSidebar)
+            {
+                toggleSidebar();
+            }
+        }
+        window.addEventListener('resize', function(event){
+            if (window.innerWidth > 768 && showSidebar)
+            {
+                toggleSidebar();
+            }
+        });
+    </script>
+</html>
+
